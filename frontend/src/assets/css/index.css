@@ -6,6 +6,16 @@ margin:0px;
 
 header {
     display: flex;
+ justify-content: space-around;
+ border: 1px solid rgba(0, 0, 0, 0.753);
+ margin-top: 50px;
+ border-radius: 5px;
+ height: 60px;
+ padding-top: 14px;
+ 
+
+ 
+    
 }
 
 main {
@@ -70,8 +80,10 @@ main {
     text-align: center;
 }
 
-.example{
-    flex-direction: row;
-}
 
+.one{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
 
