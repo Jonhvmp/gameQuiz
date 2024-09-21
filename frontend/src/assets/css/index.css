@@ -1,0 +1,82 @@
+/* Import fonts - pixels para combinar com tema de quiz - p/ titulos e p */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+}
+
+main {
+    display: flex;
+}
+
+.quizSection {
+    border: 1px solid rgba(0, 0, 0, 0.753);
+    border-radius: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 10%;
+}
+
+.question {
+    border: 1px solid rgba(0, 0, 0, 0.753);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+
+.question {
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 3%;
+    padding: 10%;
+
+}
+
+
+.answers {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    margin: 10%;
+}
+
+.answer {
+    padding: 10% 30%;
+    margin: 3%;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5%;
+}
+
+
+.how-to-play {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.example{
+    flex-direction: row;
+}
+
+
