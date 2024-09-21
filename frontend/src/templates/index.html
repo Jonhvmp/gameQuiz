@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Quiz</title>
+  <link rel="stylesheet" href="../assets/css/index.css">
+
+  <!-- Imports icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- link dos icons "https://fontawesome.com/icons" -->
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Game Quiz</h1>
+    </div>
+
+    <!-- Barra de progresso -->
+    <div class="container"> <!-- container do progresso -->
+      <div class="progress-container"> <!-- container do progresso -->
+        <div class="progress" id="progress"></div> <!-- progresso -->
+        <div class="circle active">1</div> <!-- Cirulo de 1 acerto-->
+        <div class="circle">2</div> <!-- Cirulo de 2 acerto-->
+        <div class="circle">3</div> <!-- Cirulo de 3 acerto-->
+        <div class="circle">4</div> <!-- Cirulo de 4 acerto-->
+        <div class="circle">5</div> <!-- Cirulo de 5 acerto-->
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+   <main>
+    <section id="quiz-section" class="quizSection">
+      <div class="container">
+        <div class="question"> <!-- Pergunta -->
+          <h2>Questão <span id="currentQuestion">0</span></h2> <!-- Manipular número da pergunta atual pelo JS-->
+          <div class="question-text"> <!-- Texto da pergunta -->
+            <!-- Pergunta -->
+             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, incidunt.
+          </div>
+        </div>
+
+        <div class="answers"> <!-- Respostas -->
+          <button class="answer"> <!-- Resposta -->
+            <span class="letter">A</span> <!-- Letra da resposta -->
+            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+          </button>
+
+          <button class="answer"> <!-- Resposta -->
+            <span class="letter">B</span> <!-- Letra da resposta -->
+            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+          </button>
+
+          <button class="answer"> <!-- Resposta -->
+            <span class="letter">C</span> <!-- Letra da resposta -->
+            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+          </button>
+
+          <button class="answer"> <!-- Resposta -->
+            <span class="letter">D</span> <!-- Letra da resposta -->
+            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+          </button>
+        </div>
+      </div>
+    </section>
+   </main>
+
+
+
+
+
+
+   <!-- Footer com informações sobre como jogar o quiz e desenvolvedores -->
+   <footer>
+    <div class="container">
+      <div class="how-to-play">
+        <h3>Como jogar?</h3>
+        <p>Para jogar, basta clicar na resposta que você acha correta. Cada resposta correta vale 20 pontos.</p>
+      </div>
+
+      <div class="developers">
+        <h3>Desenvolvedores</h3>
+        <ul>
+          <li><a href="http://github.com/Jonhvmp" target="_blank" rel="noopener noreferrer">Jonh Alex</a></li>
+          <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+          <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+          <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+        </ul>
+      </div>
+    </div>
+   </footer>
+  <!-- Import JS -->
+  <script src="../assets/js/index.js"></script>
+</body>
+</html>
