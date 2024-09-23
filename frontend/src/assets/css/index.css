@@ -7,25 +7,125 @@
   padding:0px;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
 }
 
+:root {
+    /* Fundo */
+    --fundo-default: black;
+
+    /* Cor text */
+    --title-cor: white;
+    --text-cor: whitesmoke;
+
+    /* Sombra default */
+    --sombra-default: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+    /* Default Colors */
+    --cor-primaria: #1F8EF1;
+    --cor-secundaria: #2ECC71;
+    --cor-destaque: #F1C40F;
+    --cor-neutra: #ECF0F1;
+    --cor-acento: #E74C3C;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--title-cor)
+}
+
+p, span {
+    color: var(--text-cor)
+}
+
+body {
+    background-color: red;
+}
+
+/* Cabeçalho (Header) */
 header {
+    margin: 15px;
     display: flex;
- justify-content: space-around;
- border: 1px solid rgba(0, 0, 0, 0.753);
- margin-top: 50px;
- border-radius: 5px;
- height: 60px;
- padding-top: 14px;
- margin: 2%
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-main {
+header h1 {
+    font-size: 1rem;
+}
+
+/* container do progresso */
+.progress-container {
     display: flex;
+    gap: 17px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main (Corpo do Site) */
+main {
+    height: 500px;
+    display: flex;
+    background-color: chartreuse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+/* Seção do QUIZ */
+.quizSection {
+    background-color: darkgreen;
+    display: flex;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.answer {
+    margin: 0 20px;
+    border-radius: 10px;
+    padding: 7px;
+    box-shadow: var(--sombra-default);
+}
+
+.question h2  {
+    margin-bottom: 20px;
+}
+
+.question-text {
+    margin: 20px;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .quizSection {
     border: 1px solid rgba(0, 0, 0, 0.753);
     border-radius: 30px;
@@ -83,3 +183,4 @@ main {
     flex-direction: row;
     gap: 40px;
 }
+*/
