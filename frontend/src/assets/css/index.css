@@ -68,7 +68,7 @@ header h1 {
 
 /* Main (Corpo do Site) */
 main {
-    height: 500px;
+    height: 80%;
     display: flex;
     background-color: chartreuse;
     flex-direction: column;
@@ -78,9 +78,8 @@ main {
 
 /* Seção do QUIZ */
 .quizSection {
-    background-color: darkgreen;
     display: flex;
-    width: 80%;
+    width: 100%;
     height: 80%;
     text-align: center;
     flex-direction: column;
@@ -88,18 +87,86 @@ main {
     justify-content: center;
 }
 
+#quiz-section .container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.question {
+    background: linear-gradient(135deg, #1F8EF1, #2ECC71);
+    border-radius: 10px;
+    flex: 1.2;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.question-text {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
 .answers {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
 }
 
 .answer {
-    margin: 0 20px;
-    border-radius: 10px;
-    padding: 7px;
-    box-shadow: var(--sombra-default);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.answer:hover {
+    background-color: #78dba1;
+}
+
+.letter {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.letter-a {
+    background-color: #1F8EF1;
+}
+
+.letter-b {
+    background-color: #2ECC71;
+}
+
+.letter-c {
+    background-color: #E74C3C;
+}
+
+.letter-d {
+    background-color: #F1C40F;
+}
+
+.answer-text{
+    color: black;
 }
 
 .question h2  {
@@ -110,6 +177,7 @@ main {
     margin: 20px;
     padding: 5px;
 }
+
 
 
 
