@@ -180,7 +180,17 @@ main {
 
 
 
+.container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
 
+.text_i{
+    background-color: #1F8EF1;
+    letter-spacing: 1px;
+}
 
 
 
