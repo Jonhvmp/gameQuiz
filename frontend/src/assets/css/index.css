@@ -219,6 +219,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 30px;
     
 }
 
@@ -228,11 +229,17 @@ main {
 }
 
 #ja{
-    color: white;
+    color: #00FFFF;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.developers{
+    color: #FFFFFF;
+}
 
+#moused{
+    color: #00FFFF;
+}
 
 
 
