@@ -68,11 +68,10 @@ button.textContent = answer.text;
 button.dataset.correct = answer.correct;
 
 button.removeEventListener("click", nextQuestion);
-button.addEventListener("click", () => {
-    nextQuestion();
+
+button.addEventListener("click", nextQuestion)
 }) 
-});
-}
+};
 
 
 function nextQuestion() {
