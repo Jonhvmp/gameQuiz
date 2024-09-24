@@ -48,14 +48,13 @@ answers: [
 //declaração com o query
 let answerText = document.querySelectorAll('.answer-text');
 let buttons = document.querySelectorAll('.answer');
+let totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
 let questionText = document.querySelector('.question-text');
 let currentlyQuestion = document.querySelector('#currentQuestion');
 let currentlyQuestionIndex = 0; 
 
 
 function showQuestion() {
-questionText.textContent =   '';
-answerText.textContent = '';
 
 const question = questions[currentlyQuestionIndex]; //Perguntas separadas por index
 
@@ -64,8 +63,9 @@ currentlyQuestion.textContent = currentlyQuestionIndex  + 1;
 questionText.textContent = question.question;
 question.answers.forEach((answer, index ) => {
 const button = buttons[index];
-button.textContent = answer.text;
-button.dataset.correct = answer.correct;
+const answers = answerText[index];
+answers.textContent = answer.text;
+answers.dataset.correct = answer.correct;
 
 button.removeEventListener("click", nextQuestion);
 
@@ -80,11 +80,28 @@ function nextQuestion() {
         showQuestion();
     }
     else{
+totalCurrentQuestion.textContent = '';
+totalCurrentQuestion.textContent = 'Sem Perguntas!';
 questionText.textContent =   '';
-answerText.textContent = '';
 questionText.textContent =   'Não há mais perguntas!';
-    }
-}
 
+for(i=0;i<=4;i++) { 
+answerText[i].textContent ='';
+}
+}
+    }
+
+
+function checkAnswer() { 
+    question.answers.forEach((answer, index ) => {
+const answers = buttons[index];
+if(answers.dataset.correct == "true") {
+
+}
+else {
+
+}
+ })
+}
 
 showQuestion();
