@@ -45,37 +45,47 @@ answers: [
 },
 ]
 
-let answerText = Document.queryselector('.answer-text');
-let buttonAnswer = Document.queryselector('.answers');
-let questionText = Document.queryselector('.question-text');
+//declaração com o query
+let answerText = document.querySelectorAll('.answer-text');
+let buttons = document.querySelectorAll('.answer');
+let questionText = document.querySelector('.question-text');
+let currentlyQuestion = document.querySelector('#currentQuestion');
 let currentlyQuestionIndex = 0; 
 
 
+function showQuestion() {
+questionText.textContent =   '';
+answerText.textContent = '';
 
-function showQuestion () {
-const question = questions[currentQuestionIndex];
+const question = questions[currentlyQuestionIndex]; //Perguntas separadas por index
+
+currentlyQuestion.textContent = currentlyQuestionIndex  + 1;
 
 questionText.textContent = question.question;
+question.answers.forEach((answer, index ) => {
+const button = buttons[index];
+button.textContent = answer.text;
+button.dataset.correct = answer.correct;
 
-answerText.textContent = question.answers.foreach((answer, index ) => {
-answer[index].textContent = text[index];
-answer[index].addEventListener("click", selectAnswer);
-}); 
-
-currentQuestionIndex++;  
+button.removeEventListener("click", nextQuestion);
+button.addEventListener("click", () => {
+    nextQuestion();
+}) 
+});
 }
+
 
 function nextQuestion() {
-currentQuestionIndex++; 
-if(currentlyQuestionIndex >= questions.length )  {
-    questionText.textContent = "Acabaram as questões!"
+    if(currentlyQuestionIndex < questions.length - 1 ) {
+        currentlyQuestionIndex += 1;
+        showQuestion();
+    }
+    else{
+questionText.textContent =   '';
+answerText.textContent = '';
+questionText.textContent =   'Não há mais perguntas!';
+    }
 }
-else {
+
+
 showQuestion();
-}
-}
-
-
-
-questionText.textContent = ''; //Limpar preenchimento.
- answerText.textContent = ''; //Limpar preenchimento.
