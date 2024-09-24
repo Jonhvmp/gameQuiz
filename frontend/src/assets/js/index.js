@@ -67,8 +67,8 @@ const answers = answerText[index];
 answers.textContent = answer.text;
 answers.dataset.correct = answer.correct;
 
+button.addEventListener("click", checkAnswer);
 button.removeEventListener("click", nextQuestion);
-
 button.addEventListener("click", nextQuestion)
 }) 
 };
@@ -92,16 +92,17 @@ answerText[i].textContent ='';
     }
 
 
-function checkAnswer() { 
-    question.answers.forEach((answer, index ) => {
-const answers = buttons[index];
-if(answers.dataset.correct == "true") {
 
+function checkAnswer(event) { 
+let selectedButton = event.target;
+    const correct = selectedButton.dataset.correct === "true";
+if(correct) {
+    alert("acertou!");
 }
 else {
 
 }
- })
 }
+
 
 showQuestion();
