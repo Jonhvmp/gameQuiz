@@ -8,8 +8,8 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 :root {
@@ -379,7 +379,7 @@ footer .developers ul li a:hover {
     margin-top: 50px;
   }
   header {
-   
+
     justify-content: center;
   }
   .progress-container {
