@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     };
 
-
     function nextQuestion() {
         if (currentlyQuestionIndex < questions.length - 1) {
             currentlyQuestionIndex += 1;
@@ -110,7 +109,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // console da pergunta atual
     console.log(`A pergunta atual é: ${currentlyQuestionIndex}`);
     // console do acerto da resposta
-    console.log(`A resposta correta é: ${correct}`);
-    // console se errou a resposta
-    console.log(`Você errou a resposta! ${}`);
 });
