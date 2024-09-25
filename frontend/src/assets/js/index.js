@@ -1,4 +1,4 @@
-const questions = [  {
+const questions = [{
     question: "Qual das seguintes opções NÃO é uma linguagem de programação?",
     answers: [
         { text: "HTML", correct: true },
@@ -35,47 +35,68 @@ const questions = [  {
     ]
 },
 {
-question: "O que significa 'null' em JavaScript?",
-answers: [
-    { text: "Ausência intencional de valor", correct: true },
-    { text: "Um valor indefinido", correct: false },
-    { text: "Um erro de sintaxe", correct: false },
-    { text: "Um valor numérico", correct: false }
-]
+    question: "O que significa 'null' em JavaScript?",
+    answers: [
+        { text: "Ausência intencional de valor", correct: true },
+        { text: "Um valor indefinido", correct: false },
+        { text: "Um erro de sintaxe", correct: false },
+        { text: "Um valor numérico", correct: false }
+    ]
 },
 ]
 
-let answerText = Document.queryselector('.answer-text');
-let buttonAnswer = Document.queryselector('.answers');
-let questionText = Document.queryselector('.question-text');
-let currentlyQuestionIndex = 0; 
+//declaração com o query
+let answerText = document.querySelectorAll('.answer-text');
+let buttons = document.querySelectorAll('.answer');
+let totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
+let questionText = document.querySelector('.question-text');
+let currentlyQuestion = document.querySelector('#currentQuestion');
+let currentlyQuestionIndex = 0;
 
 
+function showQuestion() {
 
-function showQuestion () {
-const question = questions[currentQuestionIndex];
+    const question = questions[currentlyQuestionIndex]; //Perguntas separadas por index
 
-questionText.textContent = question.question;
+    currentlyQuestion.textContent = currentlyQuestionIndex + 1;
 
-answerText.textContent = question.answers.foreach((answer, index ) => {
-answer[index].textContent = text[index];
-answer[index].addEventListener("click", selectAnswer);
-}); 
+    questionText.textContent = question.question;
+    question.answers.forEach((answer, index) => {
+        const button = buttons[index];
+        const answers = answerText[index];
+        answers.textContent = answer.text;
+        answers.dataset.correct = answer.correct;
 
-currentQuestionIndex++;  
-}
+        button.addEventListener("click", checkAnswer);
+        button.removeEventListener("click", nextQuestion);
+        button.addEventListener("click", nextQuestion)
+    })
+};
+
 
 function nextQuestion() {
-currentQuestionIndex++; 
-if(currentlyQuestionIndex >= questions.length )  {
-    questionText.textContent = "Acabaram as questões!"
+    if (currentlyQuestionIndex < questions.length - 1) {
+        currentlyQuestionIndex += 1;
+        showQuestion();
+    }
+    else {
+        totalCurrentQuestion.textContent = 'Fim do Quiz!';
+        questionText.textContent = 'Não há mais perguntas!';
+    }
 }
-else {
+
+
+
+function checkAnswer(event) {
+    let selectedButton = event.target;
+    const correct = selectedButton.dataset.correct === "true";
+    if (correct) {
+        alert("acertou!");
+    }
+    else {
+
+    }
+}
+
+
 showQuestion();
-}
-}
-
-
-
-questionText.textContent = ''; //Limpar preenchimento.
- answerText.textContent = ''; //Limpar preenchimento.
