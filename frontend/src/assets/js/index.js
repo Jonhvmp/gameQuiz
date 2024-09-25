@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // declaração de variáveis
+    const resultSection = document.getElementById('result-section');
+    const quizSection = document.getElementById('quiz-section');
 
     const questions = [{
         question: "Qual das seguintes opções NÃO é uma linguagem de programação?",
@@ -81,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
             showQuestion();
         }
         else {
-            totalCurrentQuestion.textContent = 'Fim do Quiz!';
-            questionText.textContent = 'Não há mais perguntas!';
+            resultSection.style.display = "flex";
+
         }
     }
 
