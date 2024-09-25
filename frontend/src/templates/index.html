@@ -15,13 +15,18 @@
 <body>
   
   <!-- Fundo animado -->
+<<<<<<< HEAD
   <video autoplay loop muted id="background-video">
+=======
+  <video autoplay muted loop id="background-video">
+>>>>>>> c4410432677276f953ea7aaeda1cbb6481bf78ed
     <source src="../assets/videos/purple-cat-and-planets.1920x1080.mp4" type="video/mp4">
     Navegador não suporta video!
   </video>
 
-  <audio autoplay loop>
-    <source src="../assets/audio/videoplayback.mp3">
+  <audio id="audio-play" autoplay  loop>
+      <source src="../assets/audio/videoplayback.mp3">
+      Seu navegador não suporta o elemento de áudio.
   </audio>
 
   <div id="container" class="container">
@@ -91,8 +96,6 @@
             <p>Para jogar,basta clicar na resposta que você acha correta. <br>
               Cada resposta correta vale 20 pontos.
             </p>
-            
-            
           </div>
         </div>
         <div class="developers">
@@ -115,5 +118,4 @@
   <script src="../assets/js/index.js"></script>
   
 </body>
-
 </html>
