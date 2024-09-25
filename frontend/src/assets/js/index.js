@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     //declaração de variáveis
     const audio = document.getElementById('audio-play');
+    audio.autoplay = true;
+    console.log(audio);
     audio.volume = 0.1;
 
     const questions = [{
@@ -51,13 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
 
     //declaração com o query
-    let answerText = document.querySelectorAll('.answer-text');
-    let buttons = document.querySelectorAll('.answer');
-    let totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
-    let questionText = document.querySelector('.question-text');
-    let currentlyQuestion = document.querySelector('#currentQuestion');
-    let currentlyQuestionIndex = 0;
-
+    const answerText = document.querySelectorAll('.answer-text');
+    const buttons = document.querySelectorAll('.answer');
+    const totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
+    const questionText = document.querySelector('.question-text');
+    const currentlyQuestion = document.querySelector('#currentQuestion');
+    const currentlyQuestionIndex = 0;
 
     function showQuestion() {
 
@@ -90,19 +91,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-
     function checkAnswer(event) {
-        let selectedButton = event.target;
+        const selectedButton = event.target;
         const correct = selectedButton.dataset.correct === "true";
         if (correct) {
             alert("acertou!");
         }
         else {
-
+            alert("errou!");
         }
     }
-
-
     showQuestion();
+
+    // console log para verificar se o index.js está funcionando
+    console.log(`O index.js está funcionando!`);
+    // console da variável questions
+    console.log(`As perguntas são: ${questions}`);
+    // console da pergunta atual
+    console.log(`A pergunta atual é: ${currentlyQuestionIndex}`);
+    // console do acerto da resposta
+    console.log(`A resposta correta é: ${correct}`);
+    // console se errou a resposta
+    console.log(`Você errou a resposta! ${}`);
 });
