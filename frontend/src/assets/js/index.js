@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    //declaração de variáveis
-    const audio = document.getElementById('audio-play');
-    audio.autoplay = true;
-    console.log(audio);
-    audio.volume = 0.1;
+    // declaração de variáveis
+    const resultSection = document.getElementById('result-section');
+    const quizSection = document.getElementById('quiz-section');
 
     const questions = [{
         question: "Qual das seguintes opções NÃO é uma linguagem de programação?",
@@ -53,12 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
 
     //declaração com o query
-    const answerText = document.querySelectorAll('.answer-text');
-    const buttons = document.querySelectorAll('.answer');
-    const totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
-    const questionText = document.querySelector('.question-text');
-    const currentlyQuestion = document.querySelector('#currentQuestion');
-    const currentlyQuestionIndex = 0;
+    let answerText = document.querySelectorAll('.answer-text');
+    let buttons = document.querySelectorAll('.answer');
+    let totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
+    let questionText = document.querySelector('.question-text');
+    let currentlyQuestion = document.querySelector('#currentQuestion');
+    let currentlyQuestionIndex = 0;
 
     function showQuestion() {
 
@@ -85,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
             showQuestion();
         }
         else {
-            totalCurrentQuestion.textContent = 'Fim do Quiz!';
-            questionText.textContent = 'Não há mais perguntas!';
+            resultSection.style.display = "flex";
+
         }
     }
 
@@ -108,5 +106,5 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(`As perguntas são: ${questions}`);
     // console da pergunta atual
     console.log(`A pergunta atual é: ${currentlyQuestionIndex}`);
-    // console do acerto da resposta
+    console.log(`A pergunta ${currentlyQuestionIndex} é: ${questions[currentlyQuestionIndex]}`);
 });
