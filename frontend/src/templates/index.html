@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <!-- link dos icons "https://fontawesome.com/icons" -->
 </head>
-<body>
 
+<body>
+  <!-- Fundo animado -->
   <video autoplay muted loop id="background-video">
     <source src="../assets/videos/purple-cat-and-planets.1920x1080.mp4" type="video/mp4">
     Navegador não suporta video!
   </video>
 
-
   <div id="container" class="container">
     <!-- Header -->
     <header id="header">
       <div class="container">
-        <h1>Game Quiz</h1>
+        <h1>Dev Quiz ☝🤓</h1>
       </div>
 
       <!-- Barra de progresso -->
@@ -43,12 +44,11 @@
       <section id="quiz-section" class="quizSection">
         <div class="container">
           <div class="question"> <!-- Pergunta -->
-            <div class="totalCurrentQuestion">
-            <h2>Questão <span id="currentQuestion">0</span></h2> <!-- Manipular número da pergunta atual pelo JS-->
+            <div >
+              <h2 class="totalCurrentQuestion">Questão <span id="currentQuestion">0</span></h2> <!-- Manipular número da pergunta atual pelo JS-->
             </div>
             <div class="question-text"> <!-- Texto da pergunta -->
               <!-- Pergunta -->
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, incidunt.
             </div>
           </div>
 
@@ -81,19 +81,26 @@
     <footer>
       <div class="container">
         <div class="how-to-play">
-          <h3 >Como jogar?</h3>
+          <h3>Como jogar?</h3>
           <div class="text_i">
-            <p  >Para jogar,basta clicar   na resposta que você acha correta.<p  id="ja"> Cada resposta correta vale 20 pontos.</p></p>
-            </div>
+            <p>Para jogar,basta clicar na resposta que você acha correta. <br>
+              Cada resposta correta vale 20 pontos.
+            </p>
+            
+            
+          </div>
         </div>
         <div class="developers">
-          <h3 id="moused" >Desenvolvedores</h3>
+          <h3 id="moused">Desenvolvedores</h3>
           <ul>
-            <li><a  href="https://github.com/Jonhvmp" target="_blank" rel="noopener noreferrer">Jonh Alex</a></li>
-            <li><a  href="https://github.com/Pedromanuelafonso47" target="_blank" rel="noopener noreferrer">Pedro Afonso</a></li>
-            <li><a  href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a></li>
-            <li><a  href="https://github.com/EliezerPrad0" target="_blank" rel="noopener noreferrer">Eliezer Prado</a></li>
-            <li><a  href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+            <li><a href="https://github.com/Jonhvmp" target="_blank" rel="noopener noreferrer">Jonh Alex</a></li>
+            <li><a href="https://github.com/Pedromanuelafonso47" target="_blank" rel="noopener noreferrer">Pedro
+                Afonso</a></li>
+            <li><a href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a>
+            </li>
+            <li><a href="https://github.com/EliezerPrad0" target="_blank" rel="noopener noreferrer">Eliezer Prado</a>
+            </li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
           </ul>
         </div>
       </div>
@@ -102,4 +109,5 @@
   <!-- Import JS -->
   <script src="../assets/js/index.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-const questions = [  {
+const questions = [{
     question: "Qual das seguintes opções NÃO é uma linguagem de programação?",
     answers: [
         { text: "HTML", correct: true },
@@ -35,13 +35,13 @@ const questions = [  {
     ]
 },
 {
-question: "O que significa 'null' em JavaScript?",
-answers: [
-    { text: "Ausência intencional de valor", correct: true },
-    { text: "Um valor indefinido", correct: false },
-    { text: "Um erro de sintaxe", correct: false },
-    { text: "Um valor numérico", correct: false }
-]
+    question: "O que significa 'null' em JavaScript?",
+    answers: [
+        { text: "Ausência intencional de valor", correct: true },
+        { text: "Um valor indefinido", correct: false },
+        { text: "Um erro de sintaxe", correct: false },
+        { text: "Um valor numérico", correct: false }
+    ]
 },
 ]
 
@@ -51,57 +51,51 @@ let buttons = document.querySelectorAll('.answer');
 let totalCurrentQuestion = document.querySelector('.totalCurrentQuestion')
 let questionText = document.querySelector('.question-text');
 let currentlyQuestion = document.querySelector('#currentQuestion');
-let currentlyQuestionIndex = 0; 
+let currentlyQuestionIndex = 0;
 
 
 function showQuestion() {
 
-const question = questions[currentlyQuestionIndex]; //Perguntas separadas por index
+    const question = questions[currentlyQuestionIndex]; //Perguntas separadas por index
 
-currentlyQuestion.textContent = currentlyQuestionIndex  + 1;
+    currentlyQuestion.textContent = currentlyQuestionIndex + 1;
 
-questionText.textContent = question.question;
-question.answers.forEach((answer, index ) => {
-const button = buttons[index];
-const answers = answerText[index];
-answers.textContent = answer.text;
-answers.dataset.correct = answer.correct;
+    questionText.textContent = question.question;
+    question.answers.forEach((answer, index) => {
+        const button = buttons[index];
+        const answers = answerText[index];
+        answers.textContent = answer.text;
+        answers.dataset.correct = answer.correct;
 
-button.addEventListener("click", checkAnswer);
-button.removeEventListener("click", nextQuestion);
-button.addEventListener("click", nextQuestion)
-}) 
+        button.addEventListener("click", checkAnswer);
+        button.removeEventListener("click", nextQuestion);
+        button.addEventListener("click", nextQuestion)
+    })
 };
 
 
 function nextQuestion() {
-    if(currentlyQuestionIndex < questions.length - 1 ) {
+    if (currentlyQuestionIndex < questions.length - 1) {
         currentlyQuestionIndex += 1;
         showQuestion();
     }
-    else{
-totalCurrentQuestion.textContent = '';
-totalCurrentQuestion.textContent = 'Sem Perguntas!';
-questionText.textContent =   '';
-questionText.textContent =   'Não há mais perguntas!';
-
-for(i=0;i<=4;i++) { 
-answerText[i].textContent ='';
-}
-}
+    else {
+        totalCurrentQuestion.textContent = 'Fim do Quiz!';
+        questionText.textContent = 'Não há mais perguntas!';
     }
+}
 
 
 
-function checkAnswer(event) { 
-let selectedButton = event.target;
+function checkAnswer(event) {
+    let selectedButton = event.target;
     const correct = selectedButton.dataset.correct === "true";
-if(correct) {
-    alert("acertou!");
-}
-else {
+    if (correct) {
+        alert("acertou!");
+    }
+    else {
 
-}
+    }
 }
 
 
