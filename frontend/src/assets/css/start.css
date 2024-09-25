@@ -33,7 +33,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px, inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .start-area {
@@ -45,6 +45,15 @@
 
 .name-quiz h1 {
     font-size: 5rem;
+    text-decoration: underline;
+}
+
+.name-quiz h1>i {
+    background: linear-gradient(to top, #350A56, #ff1313);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
 }
 
 .name-quiz p {
@@ -59,6 +68,16 @@
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+}
+
+.start-button p>i {
+    font-size: 2em;
+    padding: 10px 30px;
+    background: linear-gradient(to top, #350A56, #ff1313);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
 }
 
 /* CSS */
