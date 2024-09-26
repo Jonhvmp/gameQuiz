@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const questions = [{
         question: "Qual das seguintes opções NÃO é uma linguagem de programação?",
         answers: [
-            { text: "HTML", correct: true },
+            
             { text: "Python", correct: false },
+            { text: "HTML", correct: true },
             { text: "Java", correct: false },
             { text: "Javascript", correct: false }
         ]
-    },
+    }, 
     {
         question: "O que significa'OOP' no contexto da programação?",
         answers: [
@@ -24,17 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
     {
         question: "Qual a função do comando 'return' em uma função?",
         answers: [
-            { text: "Finalizar a execução da função e retornar um valor", correct: true },
+
             { text: "Executar a função indefinidamente", correct: false },
             { text: "Declarar uma nova variável", correct: false },
-            { text: "Invocar outra função", correct: false }
+            { text: "Invocar outra função", correct: false },
+            { text: "Finalizar a execução da função e retornar um valor", correct: true }
         ]
     },
     {
         question: "Qual método é usado para adicionar um elemento ao final de um array em JavaScript?",
         answers: [
-            { text: "push()", correct: true },
             { text: "pop()", correct: false },
+            { text: "push()", correct: true },
             { text: "shift()", correct: false },
             { text: "unshift()", correct: false }
         ]
@@ -42,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
     {
         question: "O que significa 'null' em JavaScript?",
         answers: [
-            { text: "Ausência intencional de valor", correct: true },
             { text: "Um valor indefinido", correct: false },
             { text: "Um erro de sintaxe", correct: false },
+            { text: "Ausência intencional de valor", correct: true },
             { text: "Um valor numérico", correct: false }
         ]
     },
@@ -70,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const answers = answerText[index];
             answers.textContent = answer.text;
             answers.dataset.correct = answer.correct;
-
+           
+   
             button.addEventListener("click", checkAnswer);
             button.removeEventListener("click", nextQuestion);
             button.addEventListener("click", nextQuestion)
@@ -90,15 +93,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function checkAnswer(event) {
-        const selectedButton = event.target;
-        const correct = selectedButton.dataset.correct === "true";
-        if (correct) {
-            alert("acertou!");
-        }
-        else {
-            alert("errou!");
-        }
+        const selectedButton = event.target.closest('.answer');
+        const selectedAnswer = selectedButton.querySelector('.answer-text').textContent;
+        
+        const questionAnswers = questions[currentlyQuestionIndex].answers;
+        
+        const correctAnswer = questionAnswers.find((answer) => answer.text === selectedAnswer);
+
+        console.log(correctAnswer); // Verifique o que está sendo retornado
+
+       if(correctAnswer.correct === true) {
+        alert("acertou!");
+       }
+       else{
+        alert("errou!");
+       }
     }
+
     showQuestion();
 
     // console log para verificar se o index.js está funcionando
