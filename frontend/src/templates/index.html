@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Quiz</title>
   <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="icon" href="https://img.icons8.com/clouds/100/this-pc.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://img.icons8.com/clouds/100/this-pc.png" type="image/x-icon">
+
 
   <!-- Imports icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -32,13 +35,13 @@
 
       <!-- Barra de progresso -->
       <div class="container"> <!-- container do progresso -->
-        <div class="progress-container one"> <!-- container do progresso -->
-          <div class="progress" id="progress"></div> <!-- progresso -->
-          <div class="circle active">1</div> <!-- Cirulo de 1 acerto-->
-          <div class="circle">2</div> <!-- Cirulo de 2 acerto-->
-          <div class="circle">3</div> <!-- Cirulo de 3 acerto-->
-          <div class="circle">4</div> <!-- Cirulo de 4 acerto-->
-          <div class="circle">5</div> <!-- Cirulo de 5 acerto-->
+        <div class="progress-container">
+          <div class="progress" id="progress"></div>
+          <span class="circle">1</span>
+          <span class="circle">2</span>
+          <span class="circle">3</span>
+          <span class="circle">4</span>
+          <span class="circle">5</span>
         </div>
       </div>
     </header>
@@ -48,34 +51,36 @@
       <section id="quiz-section" class="quizSection">
         <div class="container">
           <div class="question"> <!-- Pergunta -->
-            <div >
-              <h2 class="totalCurrentQuestion">Questão <span id="currentQuestion">0</span></h2> <!-- Manipular número da pergunta atual pelo JS-->
-            </div>
+            <h2 class="totalCurrentQuestion">Questão <span id="currentQuestion">0</span></h2>
             <div class="question-text"> <!-- Texto da pergunta -->
               <!-- Pergunta -->
             </div>
           </div>
-
-          <div class="answers"> <!-- Respostas -->
-            <button class="answer"> <!-- Resposta -->
-              <span class="letter-a letter">A</span> <!-- Letra da resposta -->
-              <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+          <div class="answers">
+            <button class="answer">
+              <span class="letter-a letter">A</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-a"></span>
             </button>
-
-            <button class="answer"> <!-- Resposta -->
-              <span class="letter-b letter">B</span> <!-- Letra da resposta -->
-              <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+            <button class="answer">
+              <span class="letter-b letter">B</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-b"></span>
             </button>
-
-            <button class="answer"> <!-- Resposta -->
-              <span class="letter-c letter">C</span> <!-- Letra da resposta -->
-              <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+            <button class="answer">
+              <span class="letter-c letter">C</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-c"></span>
             </button>
-
-            <button class="answer"> <!-- Resposta -->
-              <span class="letter-d letter">D</span> <!-- Letra da resposta -->
-              <span class="answer-text">Answer</span> <!-- Texto da resposta -->
+            <button class="answer">
+              <span class="letter-d letter">D</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-d"></span>
             </button>
+          </div>
+          <div id="resultScreen" class="result-screen" style="display: none;">
+            <h2>Pontuação Final: <span id="finalScore">0</span></h2>
+            <button id="restartButton">Jogar de Novo</button>
           </div>
         </div>
       </section>
@@ -90,8 +95,8 @@
             <p>Para jogar,basta clicar na resposta que você acha correta. <br>
               Cada resposta correta vale 20 pontos.
             </p>
-            
-            
+
+
           </div>
         </div>
         <div class="developers">
@@ -103,6 +108,8 @@
             <li><a href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a>
             </li>
             <li><a href="https://github.com/EliezerPrad0" target="_blank" rel="noopener noreferrer">Eliezer Prado</a>
+            </li>
+            <li><a href="https://github.com/philippluca123" target="_blank" rel="noopener noreferrer">Philipp Bittencourt</a>
             </li>
             <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
           </ul>
