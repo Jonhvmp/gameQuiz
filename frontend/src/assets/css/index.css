@@ -68,9 +68,30 @@ span {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #1C0F3F;
+<<<<<<< HEAD
 }
 
 /* Fundo animado */
+=======
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-cor)
+}
+
+p {
+  color: var(--text-cor)
+}
+
+
+
+>>>>>>> main
 #background-video {
   position: fixed;
   right: 0;
@@ -182,16 +203,14 @@ main {
 }
 
 #quiz-section .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: flex; 
+  align-items: flex-start; 
+  gap: 20px; 
   width: 100%;
-  margin: 10px auto;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 .question {
+<<<<<<< HEAD
   background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-destaque));
   width: 55%;
   margin-right: 20px;
@@ -202,6 +221,61 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+=======
+
+  background: linear-gradient(135deg, #2ecc70e7, #f1c40fe3);
+  border-radius: 10px;
+  width: 55%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.answers {
+  width: 45%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+
+.result-screen {
+  top: 0; 
+  left: 0; 
+  width: 80%; 
+  height: 60vh;
+  margin: auto;
+  padding: 9%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2ecc70e7, #f1c40fe3); 
+  font-size: 3em;
+  align-items: center; 
+  justify-content: center; 
+  z-index: 10; 
+  display: none;
+}
+#restartButton{
+  align-items: center;
+  width: 22%;
+  height: 22%;
+   margin-bottom: 10px; 
+  background-color: #ffffffe7;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  position: relative;
+  border: none;
+}
+#restartButton:hover{
+  background-color: #f0d158b1;
+  width: 25%;
+  height: 25%;
+  transition: 1s;
+
+>>>>>>> main
 }
 
 .question h2 {
@@ -213,6 +287,7 @@ main {
   margin-top: 20px;
   font-size: 1.4em;
   line-height: 1.5;
+<<<<<<< HEAD
   width: 90%;
 }
 
@@ -222,27 +297,78 @@ main {
   flex-direction: column;
   gap: 10px;
 }
+=======
+  color: #ECF0F1;
+}
+
+>>>>>>> main
 
 .answer {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   background-color: rgba(236, 240, 241, 0.88);
+=======
+  
+   margin-bottom: 10px; 
+  background-color: #ffffffe7;
+>>>>>>> main
   padding: 10px 20px;
   border-radius: 50px;
   box-shadow: var(--sombra-default);
   transition: background-color 0.3s ease;
+  position: relative;
   border: none;
   cursor: pointer;
 }
 
 .answer:hover {
+<<<<<<< HEAD
   background-color: rgba(70, 206, 127, 0.89);
+=======
+  background-color: #c5c8c7e3;
+}
+.icon {
+  position: absolute;
+  right: 10px; 
+  font-size: 18px;
+  display: none; 
+>>>>>>> main
 }
 
 .answer-text {
   color: #000;
   font-size: 1.2em;
+<<<<<<< HEAD
   width: 80%;
+=======
+  width: 100%;
+
+>>>>>>> main
+}
+.correct {
+  animation: correct-animation 1s forwards;
+}
+.incorrect {
+  animation: incorrect-animation 1.5s forwards;
+}
+@keyframes correct-animation {
+  from {
+      transform: scale(1);
+      background-color: #c8e6c9; /* verde claro */
+  }
+  to {
+      transform: scale(1.1);
+  }
+}
+@keyframes incorrect-animation {
+  from {
+      transform: scale(1);
+      background-color: #ff8f8f; /* vermelho claro */
+  }
+  to {
+      transform: scale(1.1);
+  }
 }
 
 .letter {
@@ -318,6 +444,7 @@ main {
 
 /* Footer */
 footer {
+<<<<<<< HEAD
   width: 78%;
   margin-top: 20px;
   padding: 20px;
@@ -325,6 +452,9 @@ footer {
   justify-content: space-around;
   align-items: center;
   background: #350a5691;
+=======
+  margin-top: 2%;
+>>>>>>> main
   border-radius: 10px;
   backdrop-filter: blur(7px);
 }
