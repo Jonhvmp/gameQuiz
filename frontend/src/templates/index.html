@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <!-- link dos icons "https://fontawesome.com/icons" -->
 </head>
-<body>
 
+<body>
   <!-- Fundo animado -->
-  <video autoplay loop muted id="background-video">
+  <video autoplay loop id="background-video">
     <source src="../assets/videos/purple-cat-and-planets.1920x1080.mp4" type="video/mp4">
     Navegador não suporta video!
   </video>
+
+  <audio autoplay loop>
+    <source src="../assets/audio/videoplayback.mp3">
+  </audio>
 
   <div id="container" class="container">
     <!-- Header -->
@@ -29,16 +34,6 @@
       </div>
 
       <!-- Barra de progresso -->
-<<<<<<< HEAD
-      <div class="container">
-        <div class="progress-container">
-          <div class="progress" id="progress"></div>
-          <div class="circle active">1</div>
-          <div class="circle">2</div>
-          <div class="circle">3</div>
-          <div class="circle">4</div>
-          <div class="circle">5</div>
-=======
       <div class="container"> <!-- container do progresso -->
         <div class="progress-container">
           <div class="progress" id="progress"></div>
@@ -47,45 +42,14 @@
           <span class="circle">3</span>
           <span class="circle">4</span>
           <span class="circle">5</span>
->>>>>>> main
         </div>
       </div>
     </header>
 
     <!-- Main -->
     <main>
-      <section id="quiz-section" class="quizSection" style="display: flex;">
+      <section id="quiz-section" class="quizSection">
         <div class="container">
-<<<<<<< HEAD
-          <div class="question">
-            <div>
-              <h2 class="totalCurrentQuestion">Questão <span id="currentQuestion">0</span></h2>
-            </div>
-            <div class="question-text">
-              <!-- Pergunta -->
-            </div>
-          </div>
-
-          <div class="answers">
-            <button class="answer">
-              <span class="letter letter-a">A</span>
-              <span class="answer-text">Answer</span>
-            </button>
-
-            <button class="answer">
-              <span class="letter letter-b">B</span>
-              <span class="answer-text">Answer</span>
-            </button>
-
-            <button class="answer">
-              <span class="letter letter-c">C</span>
-              <span class="answer-text">Answer</span>
-            </button>
-
-            <button class="answer">
-              <span class="letter letter-d">D</span>
-              <span class="answer-text">Answer</span>
-=======
           <div class="question"> <!-- Pergunta -->
             <h2 class="totalCurrentQuestion">Questão <span id="currentQuestion">0</span></h2>
             <div class="question-text"> <!-- Texto da pergunta -->
@@ -112,7 +76,6 @@
               <span class="letter-d letter">D</span>
               <span class="answer-text"></span>
               <span class="icon" id="icon-d"></span>
->>>>>>> main
             </button>
           </div>
           <div id="resultScreen" class="result-screen" style="display: none;">
@@ -121,52 +84,25 @@
           </div>
         </div>
       </section>
-
-      <!-- Seção de Exibição da Pontuação Final -->
-      <section id="result-section" class="result-section" style="display: none;">
-        <h2><i class="fas fa-star"></i> Resultado Final</h2>
-        <p id="rank"><i class="fas fa-medal"></i> Sua posição no ranking: <span>0</span></p>
-
-        <!-- Tabela do Hall da Fama -->
-        <h3><i class="fas fa-crown"></i> Hall da Fama</h3>
-        <table id="hall-of-fame">
-          <thead>
-            <tr>
-              <th>Pontuação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Itens de ranking serão preenchidos dinamicamente -->
-          </tbody>
-        </table>
-      </section>
     </main>
 
     <!-- Footer com informações sobre como jogar o quiz e desenvolvedores -->
-    <footer style="display: none;">
+    <footer>
       <div class="container">
         <div class="how-to-play">
           <h3>Como jogar?</h3>
           <div class="text_i">
-            <p>Para jogar, basta clicar na resposta que você acha correta. <br>
+            <p>Para jogar,basta clicar na resposta que você acha correta. <br>
               Cada resposta correta vale 20 pontos.
             </p>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> main
           </div>
         </div>
         <div class="developers">
-          <h3>Desenvolvedores</h3>
+          <h3 id="moused">Desenvolvedores</h3>
           <ul>
             <li><a href="https://github.com/Jonhvmp" target="_blank" rel="noopener noreferrer">Jonh Alex</a></li>
-<<<<<<< HEAD
-            <li><a href="https://github.com/Pedromanuelafonso47" target="_blank" rel="noopener noreferrer">Pedro Afonso</a></li>
-            <li><a href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a></li>
-            <li><a href="https://github.com/EliezerPrad0" target="_blank" rel="noopener noreferrer">Eliezer Prado</a></li>
-=======
             <li><a href="https://github.com/Pedromanuelafonso47" target="_blank" rel="noopener noreferrer">Pedro
                 Afonso</a></li>
             <li><a href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a>
@@ -176,7 +112,6 @@
             <li><a href="https://github.com/philippluca123" target="_blank" rel="noopener noreferrer">Philipp Bittencourt</a>
             </li>
             <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
->>>>>>> main
           </ul>
         </div>
       </div>
@@ -185,4 +120,5 @@
   <!-- Import JS -->
   <script src="../assets/js/index.js"></script>
 </body>
+
 </html>
