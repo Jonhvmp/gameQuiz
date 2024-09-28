@@ -1,98 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Quiz</title>
   <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="icon" href="https://img.icons8.com/clouds/100/this-pc.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://img.icons8.com/clouds/100/this-pc.png" type="image/x-icon">
+
 
   <!-- Imports icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <!-- link dos icons "https://fontawesome.com/icons" -->
 </head>
+
 <body>
-  <!-- Header -->
-  <header id="header">
-    <div class="container">
-      <h1>Game Quiz</h1>
-    </div>
+  <!-- Fundo animado -->
+  <video autoplay loop id="background-video">
+    <source src="../assets/videos/purple-cat-and-planets.1920x1080.mp4" type="video/mp4">
+    Navegador não suporta video!
+  </video>
 
-    <!-- Barra de progresso -->
-    <div class="container"> <!-- container do progresso -->
-      <div class="progress-container one"> <!-- container do progresso -->
-        <div class="progress" id="progress"></div> <!-- progresso -->
-        <div class="circle active">1</div> <!-- Cirulo de 1 acerto-->
-        <div class="circle">2</div> <!-- Cirulo de 2 acerto-->
-        <div class="circle">3</div> <!-- Cirulo de 3 acerto-->
-        <div class="circle">4</div> <!-- Cirulo de 4 acerto-->
-        <div class="circle">5</div> <!-- Cirulo de 5 acerto-->
-      </div>
-    </div>
-  </header>
+  <audio autoplay loop>
+    <source src="../assets/audio/videoplayback.mp3">
+  </audio>
 
-  <!-- Main -->
-   <main>
-    <video src="../assets/img/purple-cat-and-planets.1920x1080.mp4" autoplay muted loop class="bg-video" type="video.mp4">
-    </video>
-    <section id="quiz-section" class="quizSection">
+  <div id="container" class="container">
+    <!-- Header -->
+    <header id="header">
       <div class="container">
-        <div class="question"> <!-- Pergunta -->
-          <div class="totalCurrentQuestion">
-          <h2>Questão <span id="currentQuestion">0</span></h2> <!-- Manipular número da pergunta atual pelo JS-->
-          </div>
-          <div class="question-text"> <!-- Texto da pergunta -->
-            <!-- Pergunta -->
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, incidunt.
-          </div>
-        </div>
+        <h1>Dev Quiz ☝🤓</h1>
+      </div>
 
-        <div class="answers"> <!-- Respostas -->
-          <button class="answer"> <!-- Resposta -->
-            <span class="letter-a letter">A</span> <!-- Letra da resposta -->
-            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
-          </button>
-
-          <button class="answer"> <!-- Resposta -->
-            <span class="letter-b letter">B</span> <!-- Letra da resposta -->
-            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
-          </button>
-
-          <button class="answer"> <!-- Resposta -->
-            <span class="letter-c letter">C</span> <!-- Letra da resposta -->
-            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
-          </button>
-
-          <button class="answer"> <!-- Resposta -->
-            <span class="letter-d letter">D</span> <!-- Letra da resposta -->
-            <span class="answer-text">Answer</span> <!-- Texto da resposta -->
-          </button>
+      <!-- Barra de progresso -->
+      <div class="container"> <!-- container do progresso -->
+        <div class="progress-container">
+          <div class="progress" id="progress"></div>
+          <span class="circle">1</span>
+          <span class="circle">2</span>
+          <span class="circle">3</span>
+          <span class="circle">4</span>
+          <span class="circle">5</span>
         </div>
       </div>
-    </section>
-   </main>
+    </header>
 
-   <!-- Footer com informações sobre como jogar o quiz e desenvolvedores -->
-   <footer>
-    <div class="container1">
-      <div class="how-to-play">
-        <h3 id="moused">Como jogar?</h3>
-        <div class="text_i">
-          <p  >Para jogar,basta clicar   na resposta que você acha correta.<p  id="ja"> Cada resposta correta vale 20 pontos.</p></p>
+    <!-- Main -->
+    <main>
+      <section id="quiz-section" class="quizSection">
+        <div class="container">
+          <div class="question"> <!-- Pergunta -->
+            <h2 class="totalCurrentQuestion">Questão <span id="currentQuestion">0</span></h2>
+            <div class="question-text"> <!-- Texto da pergunta -->
+              <!-- Pergunta -->
+            </div>
           </div>
+          <div class="answers">
+            <button class="answer">
+              <span class="letter-a letter">A</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-a"></span>
+            </button>
+            <button class="answer">
+              <span class="letter-b letter">B</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-b"></span>
+            </button>
+            <button class="answer">
+              <span class="letter-c letter">C</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-c"></span>
+            </button>
+            <button class="answer">
+              <span class="letter-d letter">D</span>
+              <span class="answer-text"></span>
+              <span class="icon" id="icon-d"></span>
+            </button>
+          </div>
+          <div id="resultScreen" class="result-screen" style="display: none;">
+            <h2>Pontuação Final: <span id="finalScore">0</span></h2>
+            <button id="restartButton">Jogar de Novo</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer com informações sobre como jogar o quiz e desenvolvedores -->
+    <footer>
+      <div class="container">
+        <div class="how-to-play">
+          <h3>Como jogar?</h3>
+          <div class="text_i">
+            <p>Para jogar,basta clicar na resposta que você acha correta. <br>
+              Cada resposta correta vale 20 pontos.
+            </p>
+
+
+          </div>
+        </div>
+        <div class="developers">
+          <h3 id="moused">Desenvolvedores</h3>
+          <ul>
+            <li><a href="https://github.com/Jonhvmp" target="_blank" rel="noopener noreferrer">Jonh Alex</a></li>
+            <li><a href="https://github.com/Pedromanuelafonso47" target="_blank" rel="noopener noreferrer">Pedro
+                Afonso</a></li>
+            <li><a href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a>
+            </li>
+            <li><a href="https://github.com/EliezerPrad0" target="_blank" rel="noopener noreferrer">Eliezer Prado</a>
+            </li>
+            <li><a href="https://github.com/philippluca123" target="_blank" rel="noopener noreferrer">Philipp Bittencourt</a>
+            </li>
+            <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+          </ul>
+        </div>
       </div>
- <div class="developers">
-        <h3 id="moused" >Desenvolvedores</h3>
-        <ul>
-          <li><a  href="https://github.com/Jonhvmp" target="_blank" rel="noopener noreferrer">Jonh Alex</a></li>
-          <li><a  href="https://github.com/Pedromanuelafonso47" target="_blank" rel="noopener noreferrer">Pedro Afonso</a></li>
-          <li><a  href="http://github.com/EvelynS-Dias" target="_blank" rel="noopener noreferrer">Evelyn Soares</a></li>
-          <li><a  href="https://github.com/EliezerPrad0" target="_blank" rel="noopener noreferrer">Eliezer Prado</a></li>
-          <li><a  href="http://" target="_blank" rel="noopener noreferrer"></a></li>
-        </ul>
-      </div>
-    </div>
-   </footer>
+    </footer>
+  </div>
   <!-- Import JS -->
   <script src="../assets/js/index.js"></script>
 </body>
+
 </html>
