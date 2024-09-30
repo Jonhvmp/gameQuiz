@@ -123,7 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showQuestion() {
         const question = shuffledQuestions[currentlyQuestionIndex];
-        currentlyQuestion.textContent = question.numero; // Atualiza o número da pergunta
+        currentlyQuestion.textContent = currentlyQuestionIndex + 1; // Atualiza o número do progresso
+
+        // Sincroniza o número da pergunta com o total de perguntas no quiz de acordo com o progresso
+        document.querySelector('.totalCurrentQuestion').innerHTML = `Questão ${currentlyQuestionIndex + 1}`;
+
         questionText.textContent = question.question;
 
         shuffle(question.answers);
@@ -138,10 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
             button.removeEventListener("click", checkAnswer); // Remove eventos anteriores
             button.addEventListener("click", checkAnswer); // Adiciona evento
         });
+
+        // updateProgress(); // Atualiza a barra de progresso
     }
 
-    // Lembre-se de chamar esta função para mostrar a primeira pergunta
-    showQuestion();
+    showQuestion(); // Chama a função para renderizar a primeira pergunta
 
     function nextQuestion() {
         if (currentlyQuestionIndex < shuffledQuestions.length - 1) {
@@ -164,6 +169,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentlyQuestionIndex < circles.length) {
             circles[currentlyQuestionIndex].textContent = isCorrect ? '✅' : '❌'; // Atualiza com o ícone
         }
+        console.log(totalScore);
+
         circles.forEach((circle, index) => {
             if (index < currentlyQuestionIndex) {
                 circle.classList.add('active'); // Marca a pergunta respondida
@@ -205,7 +212,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('restartButton').addEventListener('click', function () {
         window.location.reload(true);
     });
-
-    // Renderiza a primeira pergunta
-    showQuestion();
 });
