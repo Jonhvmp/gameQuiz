@@ -190,13 +190,11 @@ main {
   transition: background-color 0.3s ease;
   position: relative;
   border: none;
+  transition: 1s;
 }
 #restartButton:hover{
   background-color: #f0d158b1;
-  width: 25%;
-  height: 25%;
-  transition: 1s;
-
+  transform: scale(1.1);
 }
 
 .question h2 {
