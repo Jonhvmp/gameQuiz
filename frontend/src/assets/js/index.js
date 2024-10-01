@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showResults() {
         document.getElementById('finalScore').textContent = totalScore;
-        document.getElementById('resultScreen').style.display = 'block'; // Exibe a tela de resultados
+        document.getElementById('resultScreen').style.display = 'flex'; // Exibe a tela de resultados
         document.querySelector('.question').style.display = 'none'; // Esconde as perguntas
         document.querySelector('.answers').style.display = 'none'; // Esconde as respostas
     }
