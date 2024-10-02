@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // definindo o volume do audio
+    let audio = new Audio('../assets/audio/videoplayback.mp3');
+    audio.volume = 0.2;
     const questions = [
         {
             numero: "1",
@@ -137,16 +140,14 @@ document.addEventListener('DOMContentLoaded', function () {
             answerText.textContent = answer.text;
             answerText.dataset.correct = answer.correct;
 
-            button.classList.remove('correct', 'incorrect'); // Limpa as classes
-            button.querySelector('.icon').style.display = 'none'; // Esconde os ícones
-            button.removeEventListener("click", checkAnswer); // Remove eventos anteriores
-            button.addEventListener("click", checkAnswer); // Adiciona evento
+            button.classList.remove('correct', 'incorrect');
+            button.querySelector('.icon').style.display = 'none';
+            button.removeEventListener("click", checkAnswer);
+            button.addEventListener("click", checkAnswer);
         });
-
-        // updateProgress(); // Atualiza a barra de progresso
     }
 
-    showQuestion(); // Chama a função para renderizar a primeira pergunta
+    showQuestion();
 
     function nextQuestion() {
         if (currentlyQuestionIndex < shuffledQuestions.length - 1) {
@@ -165,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Função para atualizar a barra de progresso
     function updateProgress(isCorrect) {
         const circles = document.querySelectorAll('.circle');
-        // Marca o círculo correspondente com ícone
+
         if (currentlyQuestionIndex < circles.length) {
-            circles[currentlyQuestionIndex].textContent = isCorrect ? '✅' : '❌'; // Atualiza com o ícone
+            circles[currentlyQuestionIndex].textContent = isCorrect ? '✅' : '❌';
         }
         console.log(totalScore);
 
@@ -189,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (correct) {
             selectedButton.classList.add('correct');
-            totalScore += 20; // Adiciona 20 pontos
+            totalScore += 20;
         } else {
             selectedButton.classList.add('incorrect');
         }
@@ -204,9 +205,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showResults() {
         document.getElementById('finalScore').textContent = totalScore;
-        document.getElementById('resultScreen').style.display = 'flex'; // Exibe a tela de resultados
-        document.querySelector('.question').style.display = 'none'; // Esconde as perguntas
-        document.querySelector('.answers').style.display = 'none'; // Esconde as respostas
+        document.getElementById('resultScreen').style.display = 'flex';
+        document.querySelector('.question').style.display = 'none';
+        document.querySelector('.answers').style.display = 'none';
     }
 
     document.getElementById('restartButton').addEventListener('click', function () {
